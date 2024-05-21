@@ -1,5 +1,5 @@
 ﻿﻿body {
-    font-family: 'Times New Roman', monospace;
+    font-family: 'Times New Roman';
     position: relative;
     background-image: url("../images/background.jpg");
     height: 100vh; /* Высота контейнера */
@@ -12,28 +12,37 @@
 .text-container {
     height: 300px;
     width: 60%;
-    background-color: rgba(71, 73, 82, 0.6); /* Полупрозрачный серый фон */
     color: #E5E4E2;
     font-size: 25px;
     border-radius: 10px;
-    border: 1px solid #333;
+    border: 1px solid #C6DF90;
     text-align: center;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 250px;
     margin-bottom: 50px;
     position: relative;
     z-index: 1;
+    background: linear-gradient(to right, #77DD77, /* Пастельный зеленый */
+    #FF8C69, /* Пастельный красновато-оранжевый */
+    #FF9BAA, /* Пастельный розовый */
+    #FFB28B, /* Пастельный светло-оранжевый */
+    #FCE883, /* Пастельный желтый */
+    #BEBD7F, /* Пастельный серо-желтый */
+    #C6DF90, /* Пастельный светло-зеленый */
+    #AFDAFC /* Пастельный светло-голубой */
+    );
 }
 
+
 a {
-    font-size: 1.2rem;
+    font-size: 15px;
     display: inline-block;
     padding: 10px 20px; /* Задаем отступы */
     border-radius: 15px; /* Делаем кнопки округлыми */
     background-color: #424959; /* Цвет фона кнопок */
-    color: #E5E4E2; /* Цвет текста кнопок */
+    color: #222; /* Цвет текста кнопок */
     text-decoration: none; /* Убираем подчеркивание */
-    border: 1px solid #333; /* Добавляем рамку */
+    border: 1px solid #E5E4E2; /* Добавляем рамку */
     transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Плавное изменение цвета */
     margin: 0 10px; /* Добавляем отступы по бокам */
     font-style: italic;
@@ -48,3 +57,11 @@ a {
     a:active {
         transform: translateY(1px); /* Создаем эффект нажатия */
     }
+
+
+h1 {
+    color: #222; /* Серый цвет текста */
+    font-size: 20px; /* Небольшой размер текста */
+    text-align: center; /* Центрирование текста */
+    margin: 20px 0; /* Добавление отступов сверху и снизу */
+}

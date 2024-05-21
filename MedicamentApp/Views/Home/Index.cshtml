@@ -7,12 +7,17 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="@Url.Content("~/css/home.css")">
 </head>
-<body style="background-image: url(" .. /images/background.jpg");">
+<body style="height: 100vh; /* Высота контейнера */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;background-image: url('/images/background.jpg');font-family: 'Times New Roman', monospace;
+    position: relative;">
     @section Header {
         <h1>MedFarm</h1>
     }
     <div class="text-container">
-        <h1>Приветсвуем Вас на сайте "MedFarm"!</h1>
+        <p>Приветсвуем Вас на сайте "MedFarm"!</p>
         <p><a href="@Url.Action("Login", "Account")">Войти</a> или <a href="@Url.Action("Register", "Account")">Зарегистрироваться</a></p>
     </div>
     @section Footer {

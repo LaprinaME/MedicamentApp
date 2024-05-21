@@ -8,7 +8,15 @@
 }
 
 .header-container {
-    background: linear-gradient(90deg, #FFDEE9, #FFEEB7, #D4FFB2, #B5FFFC, #B28DFF, #FFD1DC, #FFDEE9);
+    background: linear-gradient(to right, #77DD77, /* Пастельный зеленый */
+    #FF8C69, /* Пастельный красновато-оранжевый */
+    #FF9BAA, /* Пастельный розовый */
+    #FFB28B, /* Пастельный светло-оранжевый */
+    #FCE883, /* Пастельный желтый */
+    #BEBD7F, /* Пастельный серо-желтый */
+    #C6DF90, /* Пастельный светло-зеленый */
+    #AFDAFC /* Пастельный светло-голубой */
+    );
     background-size: 400% 400%; /* Размер для анимации */
     animation: gradientAnimation 15s ease infinite; /* Анимация градиента */
     position: fixed; /* Фиксированная позиция */
@@ -18,7 +26,15 @@
 }
 
 .footer-container {
-    background: linear-gradient(90deg, #FFDEE9, #FFD1DC, #B28DFF, #B5FFFC, #D4FFB2, #FFEEB7, #FFDEE9);
+    background: linear-gradient(to right, #77DD77, /* Пастельный зеленый */
+    #FF8C69, /* Пастельный красновато-оранжевый */
+    #FF9BAA, /* Пастельный розовый */
+    #FFB28B, /* Пастельный светло-оранжевый */
+    #FCE883, /* Пастельный желтый */
+    #BEBD7F, /* Пастельный серо-желтый */
+    #C6DF90, /* Пастельный светло-зеленый */
+    #AFDAFC /* Пастельный светло-голубой */
+    );
     background-size: 400% 400%; /* Размер для анимации */
     animation: gradientAnimation 15s ease infinite; /* Анимация градиента */
     position: fixed; /* Фиксированная позиция */
