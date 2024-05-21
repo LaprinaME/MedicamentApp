@@ -7,20 +7,22 @@ namespace MedicamentApp.Models
     public class Profit
     {
         [Key]
-        public int ProfitId { get; set; }
+        public int Идентификатор { get; set; }
 
         [ForeignKey("Drug")]
-        public int DrugId { get; set; }
+        public int Идентификатор_лекарства { get; set; }
         public Drug Drug { get; set; }
 
-        public DateTime DateReceived { get; set; }
+        [Required]
+        public DateTime Дата_поступления { get; set; }
 
-        public int Quantity { get; set; }
+        [Required]
+        public int Количество { get; set; }
 
         [StringLength(255)]
-        public string Supplier { get; set; }
+        public string Поставщик { get; set; }
 
-        [Column(TypeName = "decimal(10, 2)")]
-        public decimal PurchasePrice { get; set; }
+        [Required]
+        public decimal Цена_закупки { get; set; }
     }
 }

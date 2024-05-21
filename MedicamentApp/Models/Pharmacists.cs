@@ -6,15 +6,16 @@ namespace MedicamentApp.Models
     public class Pharmacists
     {
         [Key]
-        public int PharmacistId { get; set; }
+        public int Идентификатор { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string FullName { get; set; }
+        public string ФИО { get; set; }
 
-        public DateTime HireDate { get; set; }
+        [Required]
+        public DateTime Дата_приема { get; set; }
 
         [StringLength(50)]
-        public string Status { get; set; }
+        public string Статус { get; set; }
     }
 }

@@ -7,17 +7,19 @@ namespace MedicamentApp.Models
     public class Expenses
     {
         [Key]
-        public int ExpenseId { get; set; }
+        public int Идентификатор { get; set; }
 
         [ForeignKey("Drug")]
-        public int DrugId { get; set; }
+        public int Идентификатор_лекарства { get; set; }
         public Drug Drug { get; set; }
 
-        public DateTime DateSold { get; set; }
+        [Required]
+        public DateTime Дата_реализации { get; set; }
 
-        public int Quantity { get; set; }
+        [Required]
+        public int Количество { get; set; }
 
-        [Column(TypeName = "decimal(10, 2)")]
-        public decimal SellingPrice { get; set; }
+        [Required]
+        public decimal Отпускная_цена { get; set; }
     }
 }

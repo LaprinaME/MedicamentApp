@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Main Menu";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="@Url.Content("~/css/menu.css")">
+</head>
+<body>
+    <div class="menu-container">
+        <h1>Главное Меню</h1>
+        <p>Добро пожаловать! Выберите раздел для перехода:</p>
+        <div class="menu-links">
+            <a class="menu-link" href="@Url.Action("Index", "Home")">Главная</a>
+            <a class="menu-link" href="@Url.Action("About", "Home")">О нас</a>
+            <a class="menu-link" href="@Url.Action("Contact", "Home")">Контакты</a>
+            <a class="menu-link" href="@Url.Action("Products", "Home")">Продукты</a>
+            <a class="menu-link" href="@Url.Action("Services", "Home")">Услуги</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -7,18 +7,20 @@ namespace MedicamentApp.Models
     public class Recipes
     {
         [Key]
-        public int RecipeId { get; set; }
+        public int Идентификатор { get; set; }
 
-        public DateTime DatePrescribed { get; set; }
+        [Required]
+        public DateTime Дата_назначения { get; set; }
 
         [ForeignKey("Drug")]
-        public int DrugId { get; set; }
+        public int Идентификатор_лекарства { get; set; }
         public Drug Drug { get; set; }
 
+        [Required]
         [StringLength(255)]
-        public string DoctorName { get; set; }
+        public string ФИО_лечащего_врача { get; set; }
 
         [StringLength(255)]
-        public string HospitalAddress { get; set; }
+        public string Адрес_больницы { get; set; }
     }
 }

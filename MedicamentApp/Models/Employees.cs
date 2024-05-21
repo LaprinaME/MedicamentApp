@@ -6,16 +6,17 @@ namespace MedicamentApp.Models
     public class Employees
     {
         [Key]
-        public int EmployeeId { get; set; }
+        public int Идентификатор { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public string ФИО { get; set; }
 
         [StringLength(255)]
-        public string FullName { get; set; }
-
-        [StringLength(255)]
-        public string Position { get; set; }
+        public string Должность { get; set; }
 
         [ForeignKey("Role")]
-        public int RoleId { get; set; }
+        public int Код_роли { get; set; }
         public Role Role { get; set; }
     }
 }
