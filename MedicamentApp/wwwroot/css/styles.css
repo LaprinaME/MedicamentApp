@@ -3,56 +3,18 @@
     text-align: center; /* Выравнивание по центру */
     padding: 20px; /* Внутренний отступ */
     color: #474A51; /* Серый цвет текста */
-    font-family: 'Times New Roman', monospace; /* Шрифт */
+    font-family: 'Times New Roman', serif; /* Шрифт */
     font-size: 25px; /* Увеличенный размер текста */
+    background: linear-gradient(to right, #FF8C69, #474A51); /* Градиент рыжий-серый */
+    position: fixed; /* Фиксированная позиция */
+    width: 100%; /* Ширина на всю страницу */
+    z-index: 999; /* Зависит над остальным контентом */
 }
 
 .header-container {
-    background: linear-gradient(to right, #77DD77, /* Пастельный зеленый */
-    #FF8C69, /* Пастельный красновато-оранжевый */
-    #FF9BAA, /* Пастельный розовый */
-    #FFB28B, /* Пастельный светло-оранжевый */
-    #FCE883, /* Пастельный желтый */
-    #BEBD7F, /* Пастельный серо-желтый */
-    #C6DF90, /* Пастельный светло-зеленый */
-    #AFDAFC /* Пастельный светло-голубой */
-    );
-    background-size: 400% 400%; /* Размер для анимации */
-    animation: gradientAnimation 15s ease infinite; /* Анимация градиента */
-    position: fixed; /* Фиксированная позиция */
-    width: 100%; /* Ширина на всю страницу */
     top: 0; /* Позиция сверху */
-    z-index: 999; /* Зависит над остальным контентом */
 }
 
 .footer-container {
-    background: linear-gradient(to right, #77DD77, /* Пастельный зеленый */
-    #FF8C69, /* Пастельный красновато-оранжевый */
-    #FF9BAA, /* Пастельный розовый */
-    #FFB28B, /* Пастельный светло-оранжевый */
-    #FCE883, /* Пастельный желтый */
-    #BEBD7F, /* Пастельный серо-желтый */
-    #C6DF90, /* Пастельный светло-зеленый */
-    #AFDAFC /* Пастельный светло-голубой */
-    );
-    background-size: 400% 400%; /* Размер для анимации */
-    animation: gradientAnimation 15s ease infinite; /* Анимация градиента */
-    position: fixed; /* Фиксированная позиция */
-    width: 100%; /* Ширина на всю страницу */
     bottom: 0; /* Позиция внизу */
-    z-index: 999; /* Зависит над остальным контентом */
-}
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
 }
