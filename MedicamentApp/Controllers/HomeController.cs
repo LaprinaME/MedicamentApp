@@ -13,6 +13,7 @@ namespace MedicamentApp.Controllers
     public class HomeController : Controller
     {
         // Действие для отображения главной страницы
+        [HttpGet]
         public IActionResult Index()
         {
             return View();

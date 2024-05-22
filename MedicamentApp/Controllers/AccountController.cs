@@ -127,15 +127,15 @@ namespace MedicamentApp.Controllers
                 // Проверка роли и перенаправление на соответствующую страницу
                 if (model.RoleCode == 1)
                 {
-                    return RedirectToAction("Index", "MenuStudent");
+                    return RedirectToAction("Index", "MenuMain");
                 }
                 else if (model.RoleCode == 2)
                 {
-                    return RedirectToAction("Index", "MenuTeacher");
+                    return RedirectToAction("Index", "MenuPharmacists");
                 }
                 else if (model.RoleCode == 3)
                 {
-                    return RedirectToAction("Index", "MenuAdmin");
+                    return RedirectToAction("Index", "MenuClient");
                 }
                 else
                 {

@@ -16,6 +16,7 @@ namespace MedicamentApp.Models
         [StringLength(1000)]
         public string Аннотация { get; set; }
 
+        [Required]
         [ForeignKey("Manufacturers")]
         public int Идентификатор_производителя { get; set; }
         public Manufacturers Manufacturers { get; set; }
