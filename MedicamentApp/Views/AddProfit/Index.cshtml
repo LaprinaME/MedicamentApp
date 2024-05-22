@@ -1,0 +1,44 @@
+﻿@model MedicamentApp.ViewModels.AddProfitViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить прибыль</title>
+</head>
+<body>
+    <h2>Добавить прибыль</h2>
+    <form asp-action="Index" method="post">
+        <div>
+            <label asp-for="Идентификатор"></label>
+            <input asp-for="Идентификатор" />
+            <span asp-validation-for="Идентификатор"></span>
+        </div>
+        <div>
+            <label asp-for="Идентификатор_лекарства"></label>
+            <input asp-for="Идентификатор_лекарства" />
+            <span asp-validation-for="Идентификатор_лекарства"></span>
+        </div>
+        <div>
+            <label asp-for="Дата_поступления"></label>
+            <input asp-for="Дата_поступления" type="datetime-local" />
+            <span asp-validation-for="Дата_поступления"></span>
+        </div>
+        <div>
+            <label asp-for="Количество"></label>
+            <input asp-for="Количество" />
+            <span asp-validation-for="Количество"></span>
+        </div>
+        <div>
+            <label asp-for="Поставщик"></label>
+            <input asp-for="Поставщик" />
+            <span asp-validation-for="Поставщик"></span>
+        </div>
+        <div>
+            <label asp-for="Цена_закупки"></label>
+            <input asp-for="Цена_закупки" />
+            <span asp-validation-for="Цена_закупки"></span>
+        </div>
+        <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>

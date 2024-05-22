@@ -1,0 +1,35 @@
+﻿@model MedicamentApp.ViewModels.AddManufacturersViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить производителя</title>
+</head>
+<body>
+    <h2>Добавить производителя</h2>
+    <form asp-action="Index" method="post">
+        <div>
+            <label asp-for="Идентификатор"></label>
+            <input asp-for="Идентификатор" />
+            <span asp-validation-for="Идентификатор"></span>
+        </div>
+        <div>
+            <label asp-for="Название"></label>
+            <input asp-for="Название" />
+            <span asp-validation-for="Название"></span>
+        </div>
+        <div>
+            <label asp-for="Адрес"></label>
+            <input asp-for="Адрес" />
+            <span asp-validation-for="Адрес"></span>
+        </div>
+        <div>
+            <label asp-for="Контактный_телефон"></label>
+            <input asp-for="Контактный_телефон" />
+            <span asp-validation-for="Контактный_телефон"></span>
+        </div>
+        <button type="submit">Добавить</button>
+    </form>
+    <a href="/Home">Вернуться на главную страницу</a>
+</body>
+</html>
