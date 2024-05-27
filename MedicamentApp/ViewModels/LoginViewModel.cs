@@ -2,7 +2,7 @@
 
 namespace MedicamentApp.ViewModels
 {
-    // Модель для авторизации
+    
     public class LoginViewModel
     {
         public required string Login { get; set; }

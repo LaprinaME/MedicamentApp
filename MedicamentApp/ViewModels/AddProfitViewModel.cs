@@ -5,7 +5,7 @@ namespace MedicamentApp.ViewModels
 {
     public class AddProfitViewModel
     {
-        // Первичный ключ Идентификатор в модели представления не нужен
+        
         public int Идентификатор { get; set; }
 
         [Required(ErrorMessage = "Идентификатор лекарства обязателен")]

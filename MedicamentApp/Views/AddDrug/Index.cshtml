@@ -3,22 +3,73 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8" />
     <title>Добавить заказ</title>
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('/images/background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            color: #4CAF50; 
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+            .form-container div {
+                margin-bottom: 15px;
+            }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="date"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
         .btn-primary {
             display: block;
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: none;
             border-radius: 5px;
-            background-color: #FFA8C6;
+            background-color: #4CAF50; 
             color: #fff;
             cursor: pointer;
+            font-size: 16px;
+            font-family: 'Arial Black', sans-serif;
             transition: background-color 0.3s ease;
+            margin-top: 10px;
         }
 
             .btn-primary:hover {
-                background-color: #FF8C69;
+                background-color: #45A049; 
             }
 
         .btn-secondary {
@@ -30,40 +81,52 @@
             text-decoration: none;
             display: inline-block;
             transition: background-color 0.3s ease;
-            margin-top: 5px;
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+            font-family: 'Arial Black', sans-serif;
+            box-sizing: border-box;
         }
 
             .btn-secondary:hover {
                 background-color: #495057;
             }
+
+        .validation-message {
+            color: #4CAF50; 
+            font-size: 12px;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
-    <h2>Добавить заказ</h2>
-    <form asp-action="AddOrders" method="post">
-        @Html.AntiForgeryToken()
-        <div>
-            <label asp-for="Код_пользователя"></label>
-            <input asp-for="Код_пользователя" />
-            <span asp-validation-for="Код_пользователя"></span>
-        </div>
-        <div>
-            <label asp-for="Идентификатор_лекарства"></label>
-            <input asp-for="Идентификатор_лекарства" />
-            <span asp-validation-for="Идентификатор_лекарства"></span>
-        </div>
-        <div>
-            <label asp-for="Дата_заказа"></label>
-            <input asp-for="Дата_заказа" type="date" />
-            <span asp-validation-for="Дата_заказа"></span>
-        </div>
-        <div>
-            <label asp-for="Количество"></label>
-            <input asp-for="Количество" />
-            <span asp-validation-for="Количество"></span>
-        </div>
-        <button type="submit" class="btn-primary">Добавить</button>
-    </form>
-    <a href="/Home" class="btn-secondary">Вернуться на главную страницу</a>
+    <div class="form-container">
+        <h2>Добавить заказ</h2>
+        <form asp-action="AddOrders" method="post">
+            @Html.AntiForgeryToken()
+            <div>
+                <label asp-for="Код_пользователя">Код пользователя</label>
+                <input asp-for="Код_пользователя" />
+                <span class="validation-message" asp-validation-for="Код_пользователя"></span>
+            </div>
+            <div>
+                <label asp-for="Идентификатор_лекарства">Идентификатор лекарства</label>
+                <input asp-for="Идентификатор_лекарства" />
+                <span class="validation-message" asp-validation-for="Идентификатор_лекарства"></span>
+            </div>
+            <div>
+                <label asp-for="Дата_заказа">Дата заказа</label>
+                <input asp-for="Дата_заказа" type="date" />
+                <span class="validation-message" asp-validation-for="Дата_заказа"></span>
+            </div>
+            <div>
+                <label asp-for="Количество">Количество</label>
+                <input asp-for="Количество" type="number" />
+                <span class="validation-message" asp-validation-for="Количество"></span>
+            </div>
+            <button type="submit" class="btn-primary">Добавить</button>
+        </form>
+        <a href="/Home" class="btn-secondary">Вернуться на главную страницу</a>
+    </div>
 </body>
 </html>
