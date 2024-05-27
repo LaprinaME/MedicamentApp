@@ -61,9 +61,9 @@
     <table>
         <thead>
             <tr>
-                <th>Идентификатор</th>
+                <th>Идентификатор заказа</th>
+                <th>Идентификатор лекарства</th>
                 <th>Пользователь</th>
-                <th>Лекарство</th>
                 <th>Дата заказа</th>
                 <th>Количество</th>
             </tr>
@@ -73,6 +73,7 @@
             {
                 <tr>
                     <td>@order.Идентификатор</td>
+                    <td>@order.Идентификатор_лекарства</td>
                     <td>@order.User.Логин</td>
                     <td>@order.Дата_заказа.ToShortDateString()</td>
                     <td>@order.Количество</td>
@@ -81,8 +82,8 @@
         </tbody>
     </table>
     <div class="button-container">
-        <form method="get" action="/MenuMain/Index">
-            <button type="submit" class="return-button">Вернуться в меню</button>
+        <form method="get" action="/Home/Index">
+            <button type="submit" class="return-button">Вернуться на главную</button>
         </form>
     </div>
 </body>

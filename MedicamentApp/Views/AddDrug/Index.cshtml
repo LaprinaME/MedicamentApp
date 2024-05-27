@@ -1,14 +1,13 @@
-﻿@model MedicamentApp.ViewModels.AddOrdersViewModel
+﻿@model MedicamentApp.ViewModels.AddDrugViewModel
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>Добавить заказ</title>
+    <title>Добавить препарат</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url('/images/background.jpg'); 
+            background-image: url('/images/background.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -19,7 +18,7 @@
         }
 
         h2 {
-            color: #4CAF50; 
+            color: #4CAF50;
             text-align: center;
             margin-bottom: 20px;
             font-family: 'Arial Black', sans-serif;
@@ -59,7 +58,7 @@
             padding: 12px;
             border: none;
             border-radius: 5px;
-            background-color: #4CAF50; 
+            background-color: #4CAF50;
             color: #fff;
             cursor: pointer;
             font-size: 16px;
@@ -69,7 +68,7 @@
         }
 
             .btn-primary:hover {
-                background-color: #45A049; 
+                background-color: #45A049;
             }
 
         .btn-secondary {
@@ -93,40 +92,47 @@
             }
 
         .validation-message {
-            color: #4CAF50; 
+            color: #4CAF50;
             font-size: 12px;
             margin-top: 5px;
         }
-    </style>
+            </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Добавить заказ</h2>
-        <form asp-action="AddOrders" method="post">
-            @Html.AntiForgeryToken()
-            <div>
-                <label asp-for="Код_пользователя">Код пользователя</label>
-                <input asp-for="Код_пользователя" />
-                <span class="validation-message" asp-validation-for="Код_пользователя"></span>
-            </div>
-            <div>
-                <label asp-for="Идентификатор_лекарства">Идентификатор лекарства</label>
-                <input asp-for="Идентификатор_лекарства" />
-                <span class="validation-message" asp-validation-for="Идентификатор_лекарства"></span>
-            </div>
-            <div>
-                <label asp-for="Дата_заказа">Дата заказа</label>
-                <input asp-for="Дата_заказа" type="date" />
-                <span class="validation-message" asp-validation-for="Дата_заказа"></span>
-            </div>
-            <div>
-                <label asp-for="Количество">Количество</label>
-                <input asp-for="Количество" type="number" />
-                <span class="validation-message" asp-validation-for="Количество"></span>
-            </div>
-            <button type="submit" class="btn-primary">Добавить</button>
-        </form>
-        <a href="/Home" class="btn-secondary">Вернуться на главную страницу</a>
-    </div>
+    <h2>Добавление лекарственных препаратов</h2>
+    <form asp-action="AddDrug" method="post">
+        <div>
+            <label asp-for="Идентификатор"></label>
+            <input asp-for="Идентификатор" />
+            <span asp-validation-for="Идентификатор"></span>
+        </div>
+        <div>
+            <label asp-for="Наименование"></label>
+            <input asp-for="Наименование" />
+            <span asp-validation-for="Наименование"></span>
+        </div>
+        <div>
+            <label asp-for="Аннотация"></label>
+            <input asp-for="Аннотация" />
+            <span asp-validation-for="Аннотация"></span>
+        </div>
+        <div>
+            <label asp-for="Идентификатор_производителя"></label>
+            <input asp-for="Идентификатор_производителя" />
+            <span asp-validation-for="Идентификатор_производителя"></span>
+        </div>
+        <div>
+            <label asp-for="Единица_измерения"></label>
+            <input asp-for="Единица_измерения" />
+            <span asp-validation-for="Единица_измерения"></span>
+        </div>
+        <div>
+            <label asp-for="Место_хранения"></label>
+            <input asp-for="Место_хранения" />
+            <span asp-validation-for="Место_хранения"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Добавить</button>
+    </form>
+    <a href="/MenuPharmacists" class="btn-secondary">Вернуться в меню для фармацевтов</a>
 </body>
 </html>
