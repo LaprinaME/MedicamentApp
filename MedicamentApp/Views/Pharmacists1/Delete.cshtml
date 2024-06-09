@@ -1,8 +1,7 @@
-﻿@model MedicamentApp.Models.Employees
-
+﻿@model MedicamentApp.Models.Pharmacists
 @{
     Layout = "_LayoutEmpty";
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Delete";
 }
 
 <style>
@@ -12,7 +11,7 @@
         font-family: Arial, sans-serif;
     }
 
-    h1, h4 {
+    h1, h3, h4 {
         color: #FF9A76; /* Яркий оранжево-желтый для заголовков */
         text-align: center; /* Центрирование заголовков */
     }
@@ -30,7 +29,6 @@
         text-decoration: none; /* Убираем подчеркивание */
         display: inline-block; /* Inline block для правильного отображения */
         transition: background-color 0.3s ease; /* Плавный переход цвета */
-        margin: 5px; /* Небольшие отступы между кнопками */
     }
 
     .btn-primary {
@@ -49,14 +47,6 @@
             background-color: #FF7043; /* Темный оранжевый при наведении */
         }
 
-    .btn-info {
-        background-color: #85C1E9; /* Пастельный голубой для информационных кнопок */
-    }
-
-        .btn-info:hover {
-            background-color: #3498DB; /* Темный голубой при наведении */
-        }
-
     .btn-danger {
         background-color: #F1948A; /* Пастельный красный для кнопок удаления */
     }
@@ -65,68 +55,71 @@
             background-color: #E74C3C; /* Темный красный при наведении */
         }
 
-    .details-container {
+    .delete-container {
         max-width: 800px; /* Ограничиваем ширину */
         margin: 0 auto; /* Центрируем контейнер */
         background-color: #FFF; /* Белый фон для контейнера */
         padding: 20px; /* Внутренние отступы */
         border-radius: 8px; /* Скругленные углы */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+        text-align: center; /* Центрирование текста */
     }
 
-    dl.row {
-        background-color: #EDEDED; /* Более темный фон для таблицы */
-        border-radius: 8px; /* Скругленные углы */
-        padding: 20px; /* Внутренние отступы */
-    }
-
-    dt, dd {
-        width: 100%; /* Ширина 100% для вертикального расположения */
-        margin-bottom: 10px; /* Отступ снизу */
+    .row {
+        display: flex;
+        align-items: center; /* Вертикальное центрирование */
+        justify-content: center; /* Горизонтальное центрирование */
+        flex-wrap: wrap;
     }
 
     dt {
         font-weight: bold; /* Жирный шрифт для заголовков */
+        margin-right: 10px; /* Отступ справа */
+    }
+
+    dd {
+        margin-bottom: 10px; /* Отступ снизу */
     }
 
     .actions {
-        text-align: center; /* Центрирование кнопок */
         margin-top: 20px; /* Отступ сверху */
     }
 
-        .actions a {
+        .actions input, .actions a {
             margin: 10px 20px; /* Горизонтальные и вертикальные отступы для кнопок */
         }
 </style>
 
-<div class="details-container">
-    <h1>Детали</h1>
+<h1>Удаление</h1>
 
-    <div>
-        <h4>Сотрудник</h4>
-        <hr />
-        <dl class="row">
-            <dt>
-                @Html.DisplayNameFor(model => model.ФИО)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.ФИО)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Должность)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Должность)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Role.Код_роли)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Код_роли)
-            </dd>
-        </dl>
-    </div>
-    <div class="actions">
-        <a asp-action="Index" class="btn btn-primary">Вернуться к списку</a>
-    </div>
+<h3>Выберите строку для удаления</h3>
+<div>
+    <h4>Фармацевты</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ФИО)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ФИО)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Дата_приема)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Дата_приема)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Статус)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Статус)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Идентификатор" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Вернуться к списку</a>
+    </form>
 </div>
